@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Express Multimarcas</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
                 <a href="">teste</a>
             </div>
 
-            <div style="cursor: pointer;">
+            <div id="abrir-barra-lateral" style="cursor: pointer;">
                 <img style="width: 30px;" src="imgs/carrinho.png">
             </div>
         </div>
@@ -33,20 +34,20 @@
         <div class="cards">
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p><p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn"   style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <p id="produto1" style="font-size: 20px; margin: 10px;">R$00,00</p><p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
+                <button id="btn1"   style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p>
+                <p id="produto2" style="font-size: 20px; margin: 10px;">R$00,00</p>
                 <p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn"  style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <button id="btn2"  style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p>
+                <p id="produto3" style="font-size: 20px; margin: 10px;">R$00,00</p>
                 <p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn"  style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <button id="btn3"  style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
         </div>
         <div class="clasificacao">
@@ -55,20 +56,20 @@
         <div class="cards">
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p><p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <p id="produto4" style="font-size: 20px; margin: 10px;">R$00,00</p><p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
+                <button id="btn4" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p>
+                <p id="produto5" style="font-size: 20px; margin: 10px;">R$00,00</p>
                 <p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <button id="btn5" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
             <div class="card">
                 <div style="width: 100%px; height: 300px; background-color: rgba(141, 141, 142, 0.519);"></div>
-                <p style="font-size: 20px; margin: 10px;">R$00,00</p>
+                <p id="produto6" style="font-size: 20px; margin: 10px;">R$00,00</p>
                 <p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quibusdam at corporis. Temporibus nulla hic amet.</p>
-                <button id="saiba-mais-btn" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
+                <button id="btn6" style="width: 210px; height: 50px; cursor: pointer; margin: 20px;">Saiba Mais</button>
             </div>
         </div>
     </main>
@@ -102,8 +103,8 @@
                 <div>
                     <div style="width: 400px; height: 400px; background-color: rgb(59, 59, 59);"></div>
                 </div>
-                <p style="font-size: 25px; margin: 15px;">R$ 00,00</p>
-                <button style="width: 200px; height: 50px; cursor: pointer;">Comprar</button>
+                <p id="valor-modal" style="font-size: 25px; margin: 15px;">R$ 00,00</p>
+                <button id="comprar" style="width: 200px; height: 50px; cursor: pointer;">Comprar</button>
                 <button style="width: 180px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 10px;">Adcionar ao carrinho <img style="width: 20px; margin-left: 5px;" src="imgs/carrinho.png"></button>
             </div>
             <div style="margin: 15px;">
@@ -120,6 +121,56 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="modal-checkout">
+        <div id="checkout">
+            <div style=" display: flex; justify-content: end;">
+                <button style="background: none; border: none; cursor: pointer; padding: 10px;" id="fechar-checkout"><img style="width: 20px;" src="imgs/marca-cruzada.png" alt="fechar"></button>
+            </div>
+            <div style=" margin: 20px;">
+                <h1>Produto tal..</h1>
+            </div>
+            <form id="form-checkout">
+                <div style="margin-bottom: 10px;" id="form-checkout__cardNumber" class="container"></div>
+                <div style="display: flex;">
+                    <div style="margin-bottom: 10px;  width: 50%; margin-right: 10px;"  id="form-checkout__expirationDate" class="container"></div>
+                    <div style="margin-bottom: 10px;  width: 50%;"  id="form-checkout__securityCode" class="container"></div>
+                </div>
+                <div class="dados">
+                    <div style="display: flex; margin-bottom: 10px;">
+                        <input style="width: 410px; padding: 8px; margin-right: 10px;" type="text" id="form-checkout__cardholderName" />
+                        <select style="width: 50%; padding: 8px;"  id="form-checkout__issuer"></select>
+                    </div>
+                    <div style="display: flex; margin-bottom: 10px;">
+                        <select style="width: 50%; margin-right: 10px; padding: 8px;" id="form-checkout__installments"></select>
+                        <select style="width: 50%; padding: 8px;" id="form-checkout__identificationType"></select>
+                    </div>
+                    <div style="display: flex; margin-bottom: 10px;">
+                        <input style="width: 50%; margin-right: 10px; padding: 8px;" type="text" id="form-checkout__identificationNumber" />
+                        <input style="width: 50%; padding: 8px;" type="email" id="form-checkout__cardholderEmail" />
+                    </div>
+                </div>
+        
+                <div style="margin-top: 20px; margin-bottom: 20px; display: flex; align-items: center;">
+                <div style="margin-right: 10px;">
+                    <p style="font-size: 20px;">Valor da compra:</p>
+                </div>
+                <div>
+                    <p style="font-size: 30px;">R$ 00,00</p>
+                </div>
+                </div>
+                <button style="padding: 10px; cursor: pointer; background-color: #32CD32; border: solid 1px #319f31;" type="submit" id="form-checkout__submit">Finalizar compra</button>
+                <progress style="width: 100%;" value="0" class="progress-bar">Carregando...</progress>
+              </form>
+              <hr>
+              <div style="text-align: center;">
+                <p style="font-weight: bold; margin: 5px;">Express Multimarcas</p>
+                <p style="font-size: 10px;">Todos os seus dados estão protegidos e criptografados para garantir sua segurança e privacidade.</p>
+              </div>
+        </div>
+    </div>
+    <div id="barra-lateral" style=" display: none; background-color: rgb(205, 205, 205); width: 300px; height: 100vh; position: fixed; top: 0; left: 1140px; box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.407);">
+    <div><Button id="fechar-barra-lateral" style="border: none; background: none; cursor: pointer; margin: 15px;"><img width="20px" src="imgs/marca-cruzada.png"></Button></div>
     </div>
     <script src="script.js"></script>
 </body>
